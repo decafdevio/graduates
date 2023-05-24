@@ -1,0 +1,27 @@
+h4 {
+    color: #d2691e;
+    font-family: 'Lilita One', cursive;
+    margin: .6rem 0 0 0;
+}
+aside {
+    margin: 0 0 .5rem 1rem;
+}
+.footer {
+    position: fixed;
+    display: flex;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    border-top: 1px solid rgba(0, 0, 0, 0.225) !important;
+    padding: .5rem 0 .2rem .5rem;
+    color: rgba(0,0,0,.55);
+    z-index: 6;
+}
+.footer-links {
+    color: chocolate;
+    font-weight: bold;
+    text-decoration: none;
+}
+.footer-links:hover {
+    color: rgb(96, 45, 8);
+}
