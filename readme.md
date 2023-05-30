@@ -1,6 +1,7 @@
 # Graduates Recruitment App
 
-<img alt="Graduates dashboard" src="https://github.com/decafdevio/graduates/assets/96788931/7e269edd-3bd7-4543-9d5f-def9c3786dff">
+<img width="1039" alt="Graduates Dashboard" src="https://github.com/decafdevio/graduates/assets/96788931/7f0323e1-c63d-4feb-80c8-d4ecb5772e8c">
+
 
 ![react](https://badgen.net/badge/React/17.0.2/purple?icon=git)
 ![express](https://badgen.net/badge/Express/4.17.3/blue?icon=git)
@@ -10,15 +11,19 @@
 
 ## Version History
 
-### v1.0.0 [Aug 2022]
-Graduates recruitment app was created as part of a pair-programming exercise following agile project management methods with Jira and Slack for communication. It was built with React framework and a Node, Express backend with MongoDB (MERN stack).
-
 ### v1.1.0 [May 2023]
 Refactored file architecture and movile-view responsiveness with Bootstrap CSS library. Hosted front/back end with literecords.com VPS.
 
+<details><summary>Previous Versions</summary>
+
+### v1.0.0 [Aug 2022]
+<img alt="Graduates dashboard" src="https://github.com/decafdevio/graduates/assets/96788931/7e269edd-3bd7-4543-9d5f-def9c3786dff">   
+Graduates recruitment app was created as part of a pair-programming exercise following agile project management methods with Jira and Slack for communication. It was built with React framework and a Node, Express backend with MongoDB (MERN stack).
+</details>
+
 ## Authors
-Bradley Ashton [DecafDevIO](https://this.com)
-Nathan Anderson [PhantomQuad](https://this.com)
+Bradley Ashton [@DecafDevIO](https://this.com)   
+Nathan Anderson [@PhantomQuad](https://this.com)
 
 ## Support Me
 
