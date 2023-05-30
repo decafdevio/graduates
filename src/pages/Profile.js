@@ -4,7 +4,7 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-import Login from "../components/Login";
+import Login from "../components/login/Login";
 import { Link, useParams } from "react-router-dom";
 import { BsGithub, BsLinkedin, BsSlack, BsCloudUpload } from "react-icons/bs";
 import { MdCheckCircle } from "react-icons/md";

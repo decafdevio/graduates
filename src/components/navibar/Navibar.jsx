@@ -20,7 +20,7 @@ import {
 import { BsFillNutFill } from "react-icons/bs";
 const url = process.env.REACT_APP_API_URL;
 
-function NaviBar(props) {
+export default function Navibar(props) {
   // console.log(`navibar props`, props);
 
   const [searchVal, setSearchValue] = useState({ value: "email" });
@@ -127,7 +127,7 @@ function NaviBar(props) {
                 <MdAdminPanelSettings /> Statistics
               </Nav.Link>
             </Nav>
-            <div style={{ visibility: props.naviShow }}>
+            {/* <div style={{ visibility: props.naviShow }}>
               <Select
                 style={{ visibility: props.naviShow }}
                 className="search-crit"
@@ -146,7 +146,7 @@ function NaviBar(props) {
                   IndicatorSeparator: () => null,
                 }}
               ></Select>
-            </div>
+            </div> */}
             <Form
               style={{ visibility: props.naviShow }}
               onSubmit={(e) => props.buildsearch(e)}
@@ -155,18 +155,18 @@ function NaviBar(props) {
               <FormControl
                 type="search"
                 name="search"
-                placeholder="Search Profiles"
+                placeholder="Search..."
                 className="me-2"
                 aria-label="Search"
                 id={searchVal.value}
               />
-              <Button
+              {/* <Button
                 variant="default"
                 className="button-orange-outline"
                 type="submit"
               >
                 Search
-              </Button>
+              </Button> */}
               &nbsp;&nbsp;
               <Button
                 variant="default"
@@ -184,5 +184,3 @@ function NaviBar(props) {
   };
   return buildNavi();
 }
-
-export default NaviBar;

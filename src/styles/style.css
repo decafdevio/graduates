@@ -2,9 +2,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Jost&family=Lilita+One&family=Raleway:wght@100;400&family=League+Gothic&family=Roboto+Condensed:ital,wght@1,300&display=swap");
 
 /* internal stylesheets */
-@import "login.css";
-@import "footer.css";
-@import "navbar.css";
+@import "../components/login/login.css";
+@import "../components/footer/footer.css";
+@import "../components/navibar/navibar.css";
 
 * {
   font-family: Raleway;
@@ -31,7 +31,7 @@ body {
   height: 100%;
 } */
 body a {
-  color: #d2691e;
+  color: #ce8755;
   text-decoration: none;
 }
 body a:hover {
@@ -94,16 +94,37 @@ body {
   /* color: chocolate; */
   cursor: pointer;
 }
+.cardTitle {
+  font-size: 2.1rem;
+  font-weight: 500;
+  color: chocolate;
+}
+.cardTitle:hover {
+  cursor: pointer;
+}
 .dash-location {
   font-size: 1em;
 }
+.card-inner {
+  padding: 1rem;
+  width: 100%;
+  border-radius: 0 .5rem 0 0;
+}
+.read-more-link:hover {
+  cursor: pointer;
+}
 .ad-container {
-  text-align: left;
-  border: 1px solid black;
+  /* text-align: left; */
+  border: 1px solid rgb(128, 127, 127);
   background-color: rgb(249, 247, 247) !important;
-  border-radius: 1em;
-  width: 30%;
-  padding: 0.5em;
+  border-radius: .5em;
+  /* width: 30%; */
+  width: 90%;
+  /* padding: 0.5em; */
+  /* position: relative; */
+}
+.ad-container img {
+  border-radius: .5rem 0 0 0;
 }
 @media (max-width: 1200px) {
   .datepicker-select {
@@ -367,11 +388,11 @@ body {
   overflow: hidden;
 }
 .body-container {
-  /* background-color: #198754; */
+  padding-top: 1rem;
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
 }
 .body-container > div {
   margin: 6px;

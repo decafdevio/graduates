@@ -5,7 +5,7 @@ import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Select from "react-select";
-import Login from "../components/Login";
+import Login from "../components/login/Login";
 import CreatableSelect from "react-select/creatable";
 import { BsGithub, BsLinkedin, BsShareFill } from "react-icons/bs";
 import { Link, useParams } from "react-router-dom";

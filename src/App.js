@@ -1,29 +1,22 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route, useParams } from "react-router-dom";
 import { ApiClient } from "./api/apiClient";
-import Container from "react-bootstrap/Container";
-import Dashboard from "./pages/Dashboard";
-import Employer from "./pages/Employer";
-import View from "./pages/View";
-import Profile from "./pages/Profile";
-import Login from "./components/Login";
-import Register from "./components/Register";
-import NaviBar from "./components/NaviBar";
-import Chart from "./Chart";
-import Footer from "./components/Footer";
+import { Dashboard, Employer, Profile, View } from "./pages";
+import { Login, Register, Navibar, Footer } from "./components";
 import ContactForm from "./components/ContactForm";
+//
+import Container from "react-bootstrap/Container";
 
 const App = () => {
-  const [token, changeToken] = useState(window.localStorage.getItem("token"));
-  const [user, cUser] = useState([]);
-  const [profile, cProfile] = useState([]);
-  const [users, cUsers] = useState([]);
-  const [skillUsers, cSkillUsers] = useState([]);
-  const [show, setShow] = useState(true);
-
-  const [naviShow, cNaviShow] = useState("hidden");
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const [token, changeToken] = useState(window.localStorage.getItem("token")),
+    [user, cUser] = useState([]),
+    [profile, cProfile] = useState([]),
+    [users, cUsers] = useState([]),
+    [skillUsers, cSkillUsers] = useState([]),
+    [show, setShow] = useState(true),
+    [naviShow, cNaviShow] = useState("hidden"),
+    handleClose = () => setShow(false),
+    handleShow = () => setShow(true);
 
   const loggedIn = (newToken) => {
     window.localStorage.setItem("token", newToken);
@@ -103,7 +96,7 @@ const App = () => {
   return (
     <>
       <BrowserRouter>
-        <NaviBar
+        <Navibar
           show={show}
           handleClose={handleClose}
           handleShow={handleShow}
@@ -119,7 +112,6 @@ const App = () => {
         />
         <Container className="app">
           <Routes>
-            {/* <Route path="/chart" element={<Chart cNaviShow={cNaviShow} />} /> */}
             <Route path="/register" element={<Register client={client} />} />
             <Route
               path="/contact"
@@ -159,9 +151,7 @@ const App = () => {
             <Route
               path="/view/:id"
               element={
-                user.role == "employer" ||
-                user.role == "participant" ||
-                user.role == "tda" ? (
+                user.role ? (
                   <View
                     profile={profile}
                     cProfile={cProfile}

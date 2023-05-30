@@ -7,7 +7,7 @@ import CreatableSelect from "react-select/creatable";
 import { Link, useParams } from "react-router-dom";
 import Row from "react-bootstrap/Row";
 import toastr from "toastr";
-import Login from "../components/Login";
+import Login from "../components/login/Login";
 import { BsGithub, BsLinkedin, BsCloudUpload } from "react-icons/bs";
 import { ToastContainer, toast, Zoom } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
