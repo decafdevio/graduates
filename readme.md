@@ -10,15 +10,18 @@
 
 ## Version History
 
-### v1.0.0 [Aug 2022]
-Graduates recruitment app was created as part of a pair-programming exercise following agile project management methods with Jira and Slack for communication. It was built with React framework and a Node, Express backend with MongoDB (MERN stack).
-
 ### v1.1.0 [May 2023]
 Refactored file architecture and movile-view responsiveness with Bootstrap CSS library. Hosted front/back end with literecords.com VPS.
 
+<details><summary>Previous Versions</summary>
+
+### v1.0.0 [Aug 2022]
+Graduates recruitment app was created as part of a pair-programming exercise following agile project management methods with Jira and Slack for communication. It was built with React framework and a Node, Express backend with MongoDB (MERN stack).
+</details>
+
 ## Authors
-Bradley Ashton [DecafDevIO](https://this.com)
-Nathan Anderson [PhantomQuad](https://this.com)
+Bradley Ashton [@DecafDevIO](https://this.com)   
+Nathan Anderson [@PhantomQuad](https://this.com)
 
 ## Support Me
 
