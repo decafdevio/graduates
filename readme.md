@@ -35,7 +35,8 @@ Graduates recruitment app was created as part of a pair-programming exercise fol
   - [x] Search filter
 * Functionality
   - [ ] Check and auto submit `input="file"` changes in `./profile`
-  * BUGS
+
+**BUGS**
   - [ ] `./profile` populates from previous user.
 
 ## Authors
