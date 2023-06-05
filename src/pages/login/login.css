@@ -17,16 +17,6 @@
     text-align: center;
     font-size: 2em;
 }
-.button-orange {
-    background-color: chocolate !important;
-    border: 1px solid chocolate !important;
-    color: white !important;
-}
-.button-orange:hover {
-    border: 1px solid chocolate !important;
-    background-color: white !important;
-    color: chocolate !important;
-}
 
 @media (max-width: 991.98px) {
     .login-frame {

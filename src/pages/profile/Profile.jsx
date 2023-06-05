@@ -4,7 +4,7 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-import Login from "../components/login/Login";
+import Login from "../login/Login";
 import { Link, useParams } from "react-router-dom";
 import { BsGithub, BsLinkedin, BsSlack, BsCloudUpload } from "react-icons/bs";
 import { MdCheckCircle } from "react-icons/md";
@@ -18,10 +18,21 @@ const url = process.env.REACT_APP_PUBLIC_URL;
 const urlb = process.env.REACT_APP_API_URL;
 
 function Profile(props) {
-  console.log(`profile props`, props);
-  // console.log(`profile pic`, props.profile.picture);
-  const [availableDate, cAvailableDate] = useState(props.profile.availabledate);
-  const [skills, setSkills] = useState();
+  const [availableDate, cAvailableDate] = useState(props.profile.availabledate),
+    [skills, setSkills] = useState(),
+    [selectedPhoto, cSelectedPhoto] = useState(),
+    [newPhoto, cNewPhoto] = useState(props.profile.picture),
+    [selectedCv, cSelectedCv] = useState(props.profile.cv),
+    [courseDate, setCourseDate] = useState(new Date()),
+    [courseName, setCourseName] = useState(),
+    [courseSelect, setCourseSelect] = useState([
+      { value: "web", label: "web" },
+    ]),
+    handleSkillChange = useCallback((inputValue) => setSkills(inputValue), []),
+    handleCourseChange = useCallback(
+      (inputValue) => setCourseSelect(inputValue),
+      []
+    );
   const [skilloptions, setSkillOptions] = useState([
     { value: "html", label: "HTML" },
     {
@@ -52,27 +63,6 @@ function Profile(props) {
     { value: "express.js", label: "Express.js" },
     { value: "mongodb", label: "MongoDB" },
   ]);
-
-  const [selectedPhoto, cSelectedPhoto] = useState();
-  const [newPhoto, cNewPhoto] = useState(props.profile.picture);
-
-  const [selectedCv, cSelectedCv] = useState(props.profile.cv);
-
-  const [courseDate, setCourseDate] = useState(new Date());
-  const [courseName, setCourseName] = useState();
-  const [courseSelect, setCourseSelect] = useState([
-    { value: "web", label: "web" },
-  ]);
-
-  const handleSkillChange = useCallback(
-    (inputValue) => setSkills(inputValue),
-    []
-  );
-
-  const handleCourseChange = useCallback(
-    (inputValue) => setCourseSelect(inputValue),
-    []
-  );
 
   const handleCourseCreate = () => {
     const newwValue = {
@@ -233,7 +223,7 @@ function Profile(props) {
 
       {props.token ? (
         <div className="card profile-padding">
-          <Form onSubmit={(e) => submitHandler(e)} className="formProfile">
+          <Form onSubmit={(e) => submitHandler(e)} className="p-3">
             <div>
               <div id="col-1" style={{ position: "absolute" }}>
                 <div>

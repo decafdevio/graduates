@@ -18,6 +18,8 @@ const App = () => {
     handleClose = () => setShow(false),
     handleShow = () => setShow(true);
 
+  const client = new ApiClient(token);
+
   const loggedIn = (newToken) => {
     window.localStorage.setItem("token", newToken);
     changeToken(newToken);
@@ -27,8 +29,6 @@ const App = () => {
     window.localStorage.removeItem("token");
     changeToken("");
   };
-
-  const client = new ApiClient(token);
 
   const buildsearch = (e) => {
     e.preventDefault();
@@ -224,7 +224,7 @@ const App = () => {
           </Routes>
         </Container>
       </BrowserRouter>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };

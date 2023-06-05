@@ -7,7 +7,7 @@ import CreatableSelect from "react-select/creatable";
 import { Link, useParams } from "react-router-dom";
 import Row from "react-bootstrap/Row";
 import toastr from "toastr";
-import Login from "../components/login/Login";
+import Login from "../login/Login";
 import { BsGithub, BsLinkedin, BsCloudUpload } from "react-icons/bs";
 import { ToastContainer, toast, Zoom } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -144,7 +144,7 @@ function Employer(props) {
         <div className="profile-container">
           <br />
           <Card id="profileCards" className="view-container">
-            <Form onSubmit={(e) => submitHandler(e)} className="formProfile">
+            <Form onSubmit={(e) => submitHandler(e)} className="p-3">
               <div>
                 <div id="col-1" style={{ position: "absolute" }}>
                   <div>

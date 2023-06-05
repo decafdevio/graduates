@@ -1,0 +1,55 @@
+#view-head {
+    width: 85%;
+    border: 1px solid rgba(0, 0, 0, 0.225) !important;
+    border-radius: 0.5em;
+    padding: 2em;
+  }
+  .view-profile {
+    float: right;
+  }
+  .view img {
+    width: 10em;
+    height: 10em;
+    border: 0px solid rgba(0, 0, 0, 0.125);
+    border-radius: 1em;
+    position: absolute;
+    overflow: hidden;
+    margin-left: 4em;
+    float: left;
+  }
+/* .view-container {
+  text-align: left;
+  border: 1px solid black;
+  border-radius: 1em;
+  width: 90%;
+  padding: 1em;
+} */
+.view-container img {
+    width: 11em;
+    height: 10em;
+    border: 0px solid rgba(0, 0, 0, 0.125);
+    border-radius: 1em;
+    overflow: hidden;
+    margin-left: 3em;
+    float: left;
+  }
+  .view-details {
+    font-size: 2em;
+  }
+  .view-links {
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.25em;
+    background-color: rgb(255, 255, 255);
+    font-size: 1em;
+    color: black;
+    padding: 0.4em 1em 0em 1em;
+  }
+  .view-links a {
+    text-decoration: none;
+    color: black;
+  }
+  .view-links a:hover {
+    text-decoration: none;
+    background-color: chocolate;
+    color: white;
+  }      

@@ -1,0 +1,70 @@
+@media (max-width: 1200px) {
+    .datepicker-select {
+      width: 15em !important;
+    }
+  }
+  
+@media (max-width: 991.98px) {
+    /* .ad-container {
+        width: 100%;
+    } */
+    .dash-names {
+        font-size: 1.4em;
+        margin-top: 270px!important;
+        z-index: 1;
+        float: left;
+        min-width: 8em;
+    }
+
+    .dash-location {
+        font-size: 0.9em;
+    }
+    .avatar-container {
+        height: 300px!important;
+    }
+    .avatar-container img {
+        object-fit: contain!important;
+        height: 300px!important;
+    }
+    .avatar-container:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        /* width: 50%!important;
+        height: 50!important; */
+        display: inline-block;
+    }  
+    .ad-userdetails {
+        display: initial !important;
+        padding: 0.3em;
+        line-height: 1em;
+    }
+    .view-container img {
+        width: 100%;
+        /* height: 10em; */
+        border: 0px solid rgba(0, 0, 0, 0.125);
+        border-radius: 1em;
+        overflow: hidden;
+        margin-left: -1.5em!important;
+        /* float: left; */
+    }
+}  
+
+@keyframes glowing {
+    0% {
+      background-color: #2ba805;
+      box-shadow: 0 0 3px #2ba805;
+    }
+    50% {
+      background-color: #49e819;
+      box-shadow: 0 0 10px #49e819;
+    }
+    100% {
+      background-color: #2ba805;
+      box-shadow: 0 0 3px #2ba805;
+    }
+  }
+  .glow-animation {
+    animation: glowing 1300ms infinite;
+  }

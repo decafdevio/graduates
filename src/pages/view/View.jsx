@@ -1,14 +1,15 @@
 import React, { useEffect } from "react";
+import { Link, useParams } from "react-router-dom";
 import Card from "react-bootstrap/Card";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Select from "react-select";
-import Login from "../components/login/Login";
+import Login from "../login/Login";
 import CreatableSelect from "react-select/creatable";
 import { BsGithub, BsLinkedin, BsShareFill } from "react-icons/bs";
-import { Link, useParams } from "react-router-dom";
+import { GoLocation } from "react-icons/go";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -43,7 +44,7 @@ function View(props) {
             style={{ width: "100%" }}
             onClick={() => window.open(fullurl, "_blank").focus()}
           >
-            {GHret} {label}
+            {label}
           </Button>
         </Col>
       );
@@ -56,7 +57,7 @@ function View(props) {
     } else {
       return (
         <Row>
-          <Form.Label>My Courses</Form.Label>
+          <Form.Label>Courses</Form.Label>
           <Select
             value={props.profile?.course}
             isMulti
@@ -88,9 +89,9 @@ function View(props) {
 
   const SkillsIf = () => {
     if (props.profile?.role !== "employer") {
-      return "My Skills";
+      return "Skills";
     } else {
-      return "Skills we desire";
+      return "Desired Skills";
     }
   };
 
@@ -132,58 +133,75 @@ function View(props) {
   console.log(`view props: `, props.profile);
 
   return (
-    <center>
+    <>
       {props.token ? (
-        <div className="profile-container">
+        <div>
           <br />
-          <Card id="profileCards" className="view-container">
-            <Form className="formProfile">
+          <Card id="profileCards" className="p-3">
+            <figure className="center">
+              <img
+                className="img-fluid object-fit-cover rounded"
+                src={burl + `user/pic/` + props.profile?.picture}
+              />
+            </figure>
+            <Form>
               {/* <Form.Header className="view-head"> */}
               <Row>
-                <center>
-                  <div id="view-head">
-                    <div id="col-1">
-                      <img src={burl + `user/pic/` + props.profile?.picture} />
-                    </div>
-                    <div id="col-2">
-                      <div id="view-name">
-                        <Form.Group className="share-icons">
-                          <Button
-                            className="button-orange"
-                            onClick={() => {
-                              navigator.clipboard
-                                .writeText(url + id)
-                                .then(() => {
-                                  const toastId = toast(
-                                    "URL copied to clipboard.",
-                                    {
-                                      autoClose: 2000,
-                                      hideProgressBar: false,
-                                      closeOnClick: true,
-                                      pauseOnHover: true,
-                                      draggable: true,
-                                      progress: undefined,
-                                    }
-                                  );
-                                });
-                            }}
-                          >
-                            <BsShareFill />
-                          </Button>
-                        </Form.Group>
-                        <br />
-
-                        <h1>{checkRoleType(props)}</h1>
-                        <h5>Location: {props.profile?.location}</h5>
-                        {props.profile?.role == "employer"
-                          ? findWebsite(props)
-                          : null}
-                      </div>
+                <div id="view-head d-sm-block">
+                  {/* <div id="col-1"> */}
+                  {/* <img src={burl + `user/pic/` + props.profile?.picture} /> */}
+                  {/* </div> */}
+                  <div id="">
+                    <div id="view-name">
+                      <h1>{checkRoleType(props)}</h1>
+                      <Card.Subtitle
+                        style={{
+                          marginTop: "-.3rem",
+                          marginBottom: "1rem",
+                          color: "grey",
+                        }}
+                      >
+                        <GoLocation /> {props.profile?.location}
+                      </Card.Subtitle>
+                      {props.profile?.role == "employer"
+                        ? findWebsite(props)
+                        : null}
+                      <Form.Group className="share-icons d-flex">
+                        <Button
+                          className="btn-sm button-orange"
+                          onClick={() => {
+                            navigator.clipboard.writeText(url + id).then(() => {
+                              const toastId = toast(
+                                "URL copied to clipboard.",
+                                {
+                                  autoClose: 2000,
+                                  hideProgressBar: false,
+                                  closeOnClick: true,
+                                  pauseOnHover: true,
+                                  draggable: true,
+                                  progress: undefined,
+                                }
+                              );
+                            });
+                          }}
+                        >
+                          <BsShareFill />
+                        </Button>
+                        &nbsp;&nbsp;&nbsp;
+                        <Form.Control
+                          readOnly
+                          name="url"
+                          type="text"
+                          placeholder="Empty."
+                          value={url + id}
+                          rows={1}
+                        />
+                      </Form.Group>
                     </div>
                   </div>
-                </center>
+                </div>
               </Row>
-              <br />
+              <hr />
               {/* HEADER FINISHES */}
               <Form.Group className="mb-3" controlId="formBasicBio">
                 <Form.Label>About</Form.Label>
@@ -220,7 +238,7 @@ function View(props) {
     <Form.Control type="password" placeholder="Password" />
   </Form.Group> */}
               <hr />{" "}
-              <Row className="view-links-container">
+              <Row>
                 {checkFile(
                   props.profile?.cv,
                   "CV",
@@ -251,7 +269,7 @@ function View(props) {
       )}
       <ToastContainer theme="dark" position="bottom-center" />
       <br />
-    </center>
+    </>
   );
 }
 

@@ -88,23 +88,28 @@ function Dashboard(props) {
   const cardContainer = () => {
     return props.users.map((data) => (
       <Card key={data._id} className="ad-container">
-        <article style={{ display: "flex" }}>
-          <Card.Img
-            variant="left"
-            src={burl + `user/pic/` + data.picture}
-            width="30%"
-            style={{
-              padding: "1rem",
-              borderRadius: "3rem",
-              objectFit: "cover",
-              minWidth: "30%",
-              maxWidth: "30%",
-            }}
-          ></Card.Img>
+        <article className="d-md-flex">
+          <figure className="center pt-3 px-3">
+            <Card.Img
+              variant="left"
+              src={burl + `user/pic/` + data.picture}
+              className="img-fluid object-fit-cover rounded"
+              style={
+                {
+                  // padding: "1rem",
+                  // borderRadius: "2.5rem",
+                  // objectFit: "cover",
+                  // maxWidth: "20rem",
+                  // minWidth: "30%",
+                  // maxWidth: "30%",
+                }
+              }
+            ></Card.Img>
+          </figure>
 
           <Card className="card-inner">
             <Card.Title
-              className="cardTitle"
+              className="card-title"
               onClick={() => filterProfile(data.email)}
             >
               {data.role == "employer"
@@ -136,7 +141,11 @@ function Dashboard(props) {
           </Card>
         </article>
 
-        <Card.Footer className="text-right">
+        <Card.Footer
+          responsive="true"
+          className="text-right overflow-x-scroll"
+          // style={{ overflowX: "scroll" }}
+        >
           <Select
             value={data?.skills}
             isMulti
