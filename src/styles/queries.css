@@ -3,6 +3,17 @@
       width: 15em !important;
     }
   }
+@media (min-width: 768px) {
+  .dash-img {
+    min-width: 30%;
+    max-width: 30%;
+  }
+}
+@media (max-width: 768px) {
+  .avatar-img {
+    width: 50%;
+  }
+}
   
 @media (max-width: 991.98px) {
     /* .ad-container {

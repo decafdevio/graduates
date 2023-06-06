@@ -17,7 +17,8 @@ function View(props) {
   const { id } = useParams();
   const url = `${process.env.REACT_APP_PUBLIC_URL}view/`;
   const burl = process.env.REACT_APP_API_URL;
-  const github = <BsGithub /> && "Git";
+  // const github = <BsGithub /> && "Git";
+  const fullName = props.profile.fname + " " + props.profile.sname;
 
   props.users.map((current) => {
     if (current._id == id) {
@@ -40,8 +41,7 @@ function View(props) {
             size="sm"
             title={file}
             variant="default"
-            className="button-orange-outline"
-            style={{ width: "100%" }}
+            className="button-orange-outline w-100"
             onClick={() => window.open(fullurl, "_blank").focus()}
           >
             {label}
@@ -72,26 +72,6 @@ function View(props) {
           />{" "}
         </Row>
       );
-    }
-  };
-
-  const checkRoleType = () => {
-    if (props.profile?.role === "employer") {
-      return <b>{props.profile?.company}</b>;
-    } else {
-      return (
-        <span>
-          {props.profile?.fname} {props.profile?.sname}
-        </span>
-      );
-    }
-  };
-
-  const SkillsIf = () => {
-    if (props.profile?.role !== "employer") {
-      return "Skills";
-    } else {
-      return "Desired Skills";
     }
   };
 
@@ -130,79 +110,63 @@ function View(props) {
     props.cNaviShow("hidden");
   }, []);
 
-  console.log(`view props: `, props.profile);
-
   return (
     <>
       {props.token ? (
-        <div>
-          <br />
-          <Card id="profileCards" className="p-3">
+        <>
+          <Card id="profileCards" className="p-3 mt-3">
             <figure className="center">
               <img
-                className="img-fluid object-fit-cover rounded"
+                className="img-fluid object-fit-cover rounded avatar-img"
                 src={burl + `user/pic/` + props.profile?.picture}
               />
             </figure>
-            <Form>
-              {/* <Form.Header className="view-head"> */}
-              <Row>
-                <div id="view-head d-sm-block">
-                  {/* <div id="col-1"> */}
-                  {/* <img src={burl + `user/pic/` + props.profile?.picture} /> */}
-                  {/* </div> */}
-                  <div id="">
-                    <div id="view-name">
-                      <h1>{checkRoleType(props)}</h1>
-                      <Card.Subtitle
-                        style={{
-                          marginTop: "-.3rem",
-                          marginBottom: "1rem",
-                          color: "grey",
-                        }}
-                      >
-                        <GoLocation /> {props.profile?.location}
-                      </Card.Subtitle>
-                      {props.profile?.role == "employer"
-                        ? findWebsite(props)
-                        : null}
-                      <Form.Group className="share-icons d-flex">
-                        <Button
-                          className="btn-sm button-orange"
-                          onClick={() => {
-                            navigator.clipboard.writeText(url + id).then(() => {
-                              const toastId = toast(
-                                "URL copied to clipboard.",
-                                {
-                                  autoClose: 2000,
-                                  hideProgressBar: false,
-                                  closeOnClick: true,
-                                  pauseOnHover: true,
-                                  draggable: true,
-                                  progress: undefined,
-                                }
-                              );
-                            });
-                          }}
-                        >
-                          <BsShareFill />
-                        </Button>
-                        &nbsp;&nbsp;&nbsp;
-                        <Form.Control
-                          readOnly
-                          name="url"
-                          type="text"
-                          placeholder="Empty."
-                          value={url + id}
-                          rows={1}
-                        />
-                      </Form.Group>
-                    </div>
-                  </div>
-                </div>
-              </Row>
-              <hr />
-              {/* HEADER FINISHES */}
+            <Row>
+              <Card.Header className="center pb-3">
+                <h1>
+                  {props.profile.role === "employer"
+                    ? props.profile.company
+                    : fullName}
+                </h1>
+                <Card.Subtitle className="-mt-1 mb-3 text-secondary">
+                  <GoLocation /> {props.profile?.location}
+                </Card.Subtitle>
+                <Row>
+                  {/* {props.profile?.role == "employer" ? findWebsite(props) : null} */}
+                  <Form.Group className="share-icons d-flex">
+                    <Button
+                      className="btn-sm button-orange"
+                      onClick={() => {
+                        navigator.clipboard.writeText(url + id).then(() => {
+                          const toastId = toast("URL copied to clipboard.", {
+                            autoClose: 2000,
+                            hideProgressBar: false,
+                            closeOnClick: true,
+                            pauseOnHover: true,
+                            draggable: true,
+                            progress: undefined,
+                          });
+                        });
+                      }}
+                    >
+                      <BsShareFill />
+                    </Button>
+                    &nbsp;&nbsp;&nbsp;
+                    <Form.Control
+                      readOnly
+                      name="url"
+                      type="text"
+                      placeholder="Empty."
+                      value={url + id}
+                      rows={1}
+                    />
+                  </Form.Group>
+                </Row>
+              </Card.Header>
+            </Row>
+            {/* HEADER FINISHES */}
+
+            <Form className="mt-3">
               <Form.Group className="mb-3" controlId="formBasicBio">
                 <Form.Label>About</Form.Label>
                 <Form.Control
@@ -215,9 +179,15 @@ function View(props) {
                   value={props.profile?.bio}
                 />
               </Form.Group>
+
               <Form.Group controlId="multis">
                 <Row>
-                  <Form.Label>{SkillsIf(props)}</Form.Label>
+                  {props.profile.role == "employer" ? (
+                    <Form.Label>Desired Skills</Form.Label>
+                  ) : (
+                    <Form.Label>Skills</Form.Label>
+                  )}
+
                   <Select
                     value={props.profile?.skills}
                     isMulti
@@ -230,14 +200,9 @@ function View(props) {
                     }}
                   />
                 </Row>
-                <br />
-                {checkCoursesRole(props)}
+                <Row className="mt-3">{checkCoursesRole(props)}</Row>
               </Form.Group>
-              {/* <Form.Group className="mb-3" controlId="formBasicPassword">
-    <Form.Label>Password</Form.Label>
-    <Form.Control type="password" placeholder="Password" />
-  </Form.Group> */}
-              <hr />{" "}
+              <hr />
               <Row>
                 {checkFile(
                   props.profile?.cv,
@@ -263,12 +228,11 @@ function View(props) {
               {contactPerm(props)}
             </Form>
           </Card>
-        </div>
+        </>
       ) : (
         <Login client={props.client} loggedIn={props.loggedIn} />
       )}
       <ToastContainer theme="dark" position="bottom-center" />
-      <br />
     </>
   );
 }

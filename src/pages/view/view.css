@@ -7,7 +7,7 @@
   .view-profile {
     float: right;
   }
-  .view img {
+  /* .view img {
     width: 10em;
     height: 10em;
     border: 0px solid rgba(0, 0, 0, 0.125);
@@ -16,7 +16,7 @@
     overflow: hidden;
     margin-left: 4em;
     float: left;
-  }
+  } */
 /* .view-container {
   text-align: left;
   border: 1px solid black;
@@ -24,7 +24,7 @@
   width: 90%;
   padding: 1em;
 } */
-.view-container img {
+/* .view-container img {
     width: 11em;
     height: 10em;
     border: 0px solid rgba(0, 0, 0, 0.125);
@@ -32,8 +32,8 @@
     overflow: hidden;
     margin-left: 3em;
     float: left;
-  }
-  .view-details {
+  } */
+  /* .view-details {
     font-size: 2em;
   }
   .view-links {
@@ -52,4 +52,4 @@
     text-decoration: none;
     background-color: chocolate;
     color: white;
-  }      
+  }       */

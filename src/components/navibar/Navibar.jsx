@@ -1,13 +1,13 @@
+import React, { useState, useEffect } from "react";
+import { Navigate, Link, useNavigate, NavLink } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import FormControl from "react-bootstrap/FormControl";
-import React, { useState, useEffect } from "react";
 import Select from "react-select";
 import NavDropdown from "react-bootstrap/NavDropdown";
-import { Navigate, Link, useNavigate, NavLink } from "react-router-dom";
 import {
   MdDriveFileRenameOutline,
   MdOutlineEmail,
@@ -21,12 +21,10 @@ import { BsFillNutFill } from "react-icons/bs";
 const url = process.env.REACT_APP_API_URL;
 
 export default function Navibar(props) {
-  // console.log(`navibar props`, props);
+  const [searchVal, setSearchValue] = useState({ value: "email" }),
+    [hideStats, cHideStats] = useState("hidden");
 
-  const [searchVal, setSearchValue] = useState({ value: "email" });
-  const [hideStats, cHideStats] = useState("hidden");
   const handleSearchChange = (e) => {
-    // console.log(`e = `, e)
     setSearchValue(e);
     props.refreshList();
   };
@@ -68,9 +66,9 @@ export default function Navibar(props) {
     checkRole();
   }, [props]);
 
-  let theview = `/view/${props.user._id}`;
-  let theprofile = `/profile/${props.user._id}`;
-  let thestats = `/chart/`;
+  let theview = `/view/${props.user._id}`,
+    theprofile = `/profile/${props.user._id}`,
+    thestats = `/chart/`;
 
   const buildNavi = () => {
     return props.show == true ? (
@@ -81,11 +79,7 @@ export default function Navibar(props) {
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
-            <Nav
-              className="me-auto my-2 my-lg-0"
-              style={{ maxHeight: "100px" }}
-              navbarScroll
-            >
+            <Nav className="me-auto my-2 my-lg-0 mh-100" navbarScroll>
               {/* <Nav.Link as={Link} to="/" style={{ marginTop: "4px" }}>
                 Dashboard
               </Nav.Link> */}

@@ -89,36 +89,26 @@ function Dashboard(props) {
     return props.users.map((data) => (
       <Card key={data._id} className="ad-container">
         <article className="d-md-flex">
-          <figure className="center pt-3 px-3">
+          <figure className="center pt-3 px-3 dash-img">
             <Card.Img
               variant="left"
               src={burl + `user/pic/` + data.picture}
-              className="img-fluid object-fit-cover rounded"
-              style={
-                {
-                  // padding: "1rem",
-                  // borderRadius: "2.5rem",
-                  // objectFit: "cover",
-                  // maxWidth: "20rem",
-                  // minWidth: "30%",
-                  // maxWidth: "30%",
-                }
-              }
+              className="img-fluid object-fit-cover rounded avatar-img min-vw-30"
             ></Card.Img>
           </figure>
 
           <Card className="card-inner">
             <Card.Title
-              className="card-title"
+              className="card-title center"
               onClick={() => filterProfile(data.email)}
             >
               {data.role == "employer"
                 ? data.company
                 : data.fname + " " + data.sname}
+              <Card.Subtitle className="mt-1 text-secondary">
+                <GoLocation /> {data.location}
+              </Card.Subtitle>
             </Card.Title>
-            <Card.Subtitle style={{ marginTop: "0", color: "grey" }}>
-              <GoLocation /> {data.location}
-            </Card.Subtitle>
             <hr />
             <Card.Body>
               {/* truncate bio */}
