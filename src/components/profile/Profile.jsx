@@ -74,7 +74,6 @@ function Profile(props) {
       label: courseName.label + " " + moment(courseDate).format("MMMM YYYY"),
     };
     setCourseSelect([...courseSelect, newwValue]);
-    // console.log(`full course output`, courseSelect);
   };
 
   const handleSkillCreate = useCallback(
@@ -107,13 +106,10 @@ function Profile(props) {
   };
 
   const submitPhoto = () => {
-    // console.log(`picture attempt `, selectedPhoto);
-    const getFormat = "." + selectedPhoto.name.split(".").pop();
-    // console.log(`format attempt `, props.profile._id + getFormat);
-    const newFileName = props.profile._id + getFormat;
+    const getFormat = "." + selectedPhoto.name.split(".").pop(),
+      newFileName = props.profile._id + getFormat;
 
     props.client.postImage(props.profile._id, selectedPhoto).then(() => {
-      // console.log("getformat ", getFormat);
       cNewPhoto(newFileName);
       const toastId = toast(
         "Thanks, your photo has been uploaded, remember to update!",
@@ -126,7 +122,6 @@ function Profile(props) {
           progress: undefined,
         }
       );
-      // console.log(`selected file`, selectedPhoto.name);
     });
   };
 
@@ -135,13 +130,10 @@ function Profile(props) {
   };
 
   const submitCv = () => {
-    // console.log(`picture attempt `, selectedPhoto);
-    const getFormat = "." + selectedCv.name.split(".").pop();
-    // console.log(`format attempt `, props.profile._id + getFormat);
-    const newFileName = props.profile._id + getFormat;
+    const getFormat = "." + selectedCv.name.split(".").pop(),
+      newFileName = props.profile._id + getFormat;
 
     props.client.postCv(props.profile._id, selectedCv).then(() => {
-      // console.log("getformat ", getFormat);
       cSelectedCv(newFileName);
       const toastId = toast(
         "Thanks, your CV has been uploaded, remember to update!",
@@ -154,7 +146,6 @@ function Profile(props) {
           progress: undefined,
         }
       );
-      // console.log(`selected file`, selectedPhoto.name);
     });
   };
 
@@ -211,21 +202,23 @@ function Profile(props) {
   };
 
   useEffect(() => {
-    // updateCourseDets();
     setSkills(props.profile.skills);
     setCourseSelect(props.profile.course);
     props.cNaviShow("hidden");
   }, [props]);
 
   return (
-    <div className="profile-container">
-      <br />
+    <div className="profile-container mt-4">
+      {/* <br /> */}
 
       {props.token ? (
         <div className="card profile-padding">
           <Form onSubmit={(e) => submitHandler(e)} className="p-3">
             <div>
-              <div id="col-1" style={{ position: "absolute" }}>
+              <div
+              // id="col-1"
+              //  style={{ position: "absolute" }}
+              >
                 <div>
                   <img
                     src={urlb + `user/pic/` + props.user.picture}
@@ -251,7 +244,7 @@ function Profile(props) {
                   </Button>
                 </div>
               </div>
-              <div id="col-2">
+              <div>
                 <div id="view-name">
                   <Row>
                     <Col xs={3}></Col>

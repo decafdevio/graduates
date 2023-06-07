@@ -1,8 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route, useParams } from "react-router-dom";
 import { ApiClient } from "./api/apiClient";
-import { Dashboard, Employer, Profile, View } from "./pages";
-import { Login, Register, Navibar, Footer } from "./components";
+// import { Dashboard, Employer, Profile } from "./pages";
+import {
+  Dashboard,
+  Employer,
+  Profile,
+  View,
+  Login,
+  Register,
+  Navibar,
+  Footer,
+} from "./components";
 import ContactForm from "./components/ContactForm";
 //
 import Container from "react-bootstrap/Container";

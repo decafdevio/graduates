@@ -9,22 +9,25 @@
 @import "./queries.css";
 
   /** pages */
-@import "../pages/login/login.css";
-@import "../pages/view/view.css";
 
   /** components */
+@import "../components/login/login.css";
+@import "../components/view/view.css";
 @import "../components/footer/footer.css";
 @import "../components/navibar/navibar.css";
 
+:root {
+  --primary-color: blue;
+}
+
 html {
-  background-color: chocolate;
+  background-color: var(--primary-color);
 }
 body {
   font-family: Raleway;
-
   padding-top: 60px;
   padding-bottom: 110px;
-  background-color: chocolate;
+  background-color: var(--primary-color);
 }
 
 body a {
