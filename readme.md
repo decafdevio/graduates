@@ -27,9 +27,9 @@ Graduates recruitment app was created as part of a pair-programming exercise fol
 ## CI/CD Pipeline
 * UI
   - [x] Dashboard layout
-  - [ ] Card design
+  - [x] Card design
   - [ ] Bootstrap responsive `./profile`
-  - [ ] Bootstrap responsive `./view`
+  - [x] Bootstrap responsive `./view`
 * UX
   - [ ] Navbar user dropdown
   - [x] Search filter
