@@ -98,20 +98,22 @@ function Dashboard(props) {
           </figure>
 
           <Card className="card-inner">
-            <Card.Title
-              className="card-title center"
-              onClick={() => filterProfile(data.email)}
-            >
-              {data.role == "employer"
-                ? data.company
-                : data.fname + " " + data.sname}
-              <Card.Subtitle className="mt-1 text-secondary">
+            <header className="center">
+              <Card.Title
+                className="card-title"
+                onClick={() => filterProfile(data.email)}
+              >
+                {data.role == "employer"
+                  ? data.company
+                  : data.fname + " " + data.sname}
+              </Card.Title>
+              <Card.Subtitle className="text-secondary">
                 <GoLocation /> {data.location}
               </Card.Subtitle>
-            </Card.Title>
+            </header>
+
             <hr />
             <Card.Body>
-              {/* truncate bio */}
               {data.bio.length >= 200 ? (
                 <>
                   {data.bio.substring(0, 200)}...
@@ -125,17 +127,13 @@ function Dashboard(props) {
                 </>
               ) : (
                 <>{data.bio}</>
-              )}
+              )}{" "}
               {/* truncate bio */}
             </Card.Body>
           </Card>
         </article>
 
-        <Card.Footer
-          responsive="true"
-          className="text-right overflow-x-scroll"
-          // style={{ overflowX: "scroll" }}
-        >
+        <Card.Footer responsive="true" className="text-right overflow-x-scroll">
           <Select
             value={data?.skills}
             isMulti

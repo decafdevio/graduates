@@ -169,7 +169,10 @@ function View(props) {
             <Form className="mt-3">
               <Form.Group className="mb-3" controlId="formBasicBio">
                 <Form.Label>About</Form.Label>
-                <Form.Control
+                <div className="view-about p-3 rounded">
+                  {props.profile?.bio}
+                </div>
+                {/* <Form.Control
                   readOnly
                   name="bio"
                   type="text"
@@ -177,7 +180,7 @@ function View(props) {
                   placeholder="Empty."
                   rows={5}
                   value={props.profile?.bio}
-                />
+                /> */}
               </Form.Group>
 
               <Form.Group controlId="multis">
