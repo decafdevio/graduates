@@ -24,11 +24,11 @@ Refactored file architecture and movile-view responsiveness with Bootstrap CSS l
 Graduates recruitment app was created as part of a pair-programming exercise following agile project management methods with Jira and Slack for communication. It was built with React framework and a Node, Express backend with MongoDB (MERN stack). The original layout used rows of 3 column cards designed to display only the most necessary user information.
 </details>
 
-## CI/CD Pipeline
+## Dev Log
 * UI
   - [x] Dashboard layout
   - [x] Card design
-  - [ ] Bootstrap responsive `./profile`
+  - [x] Bootstrap responsive `./profile`
   - [x] Bootstrap responsive `./view`
 * UX
   - [ ] Navbar user dropdown
