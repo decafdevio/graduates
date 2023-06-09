@@ -31,7 +31,7 @@ Graduates recruitment app was created as part of a pair-programming exercise fol
   - [x] Bootstrap responsive `./profile`
   - [x] Bootstrap responsive `./view`
 * UX
-  - [ ] Navbar user dropdown
+  - [x] Navbar user dropdown
   - [x] Search filter
 * Functionality
   - [ ] Check and auto submit `input="file"` changes in `./profile`

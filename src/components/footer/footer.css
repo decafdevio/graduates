@@ -18,7 +18,7 @@ aside {
     z-index: 6;
 }
 .footer-links {
-    color: chocolate;
+    color: var(--primary-color);
     font-weight: bold;
     text-decoration: none;
 }

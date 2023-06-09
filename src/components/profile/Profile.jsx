@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import CreatableSelect from "react-select/creatable";
+import Card from "react-bootstrap/Card";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
@@ -14,6 +15,7 @@ import moment from "moment";
 import "react-datepicker/dist/react-datepicker.css";
 import { ToastContainer, toast, Zoom } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Collapse } from "bootstrap";
 const url = process.env.REACT_APP_PUBLIC_URL;
 const urlb = process.env.REACT_APP_API_URL;
 
@@ -214,97 +216,78 @@ function Profile(props) {
       {props.token ? (
         <div className="card profile-padding">
           <Form onSubmit={(e) => submitHandler(e)} className="p-3">
-            <div>
-              <div
-              // id="col-1"
-              //  style={{ position: "absolute" }}
-              >
-                <div>
+            <section>
+              <Card.Header className="center">
+                <figure>
                   <img
                     src={urlb + `user/pic/` + props.user.picture}
-                    style={{
-                      height: "8.5em",
-                      width: "9em",
-                      marginLeft: "3em",
-                      border: "1px solid rgba(0, 0, 0, 0.225)",
-                    }}
+                    className="img-fluid w-25 rounded"
                   />
-                </div>
-                <div style={{ marginLeft: "3.4em" }}>
+                  <br />
                   <label
                     for="photo-fex"
-                    className="button-orange-outline choose-file"
-                    // onClick={document.getElementById("photo-fex").click}
+                    className="active-button px-2 choose-file"
                   >
-                    Choose File
+                    Change
                   </label>
                   &nbsp;
                   <Button size="sm" variant="warning" onClick={submitPhoto}>
                     <BsCloudUpload />
                   </Button>
-                </div>
-              </div>
-              <div>
-                <div id="view-name">
-                  <Row>
-                    <Col xs={3}></Col>
-                    <Col>
-                      <Form.Group className="mb-3" controlId="formBasicfName">
-                        <Form.Label>First Name</Form.Label>
-                        <Form.Control
-                          name="fname"
-                          type="name"
-                          placeholder="Your first name"
-                          defaultValue={props.profile?.fname}
-                        />
-                      </Form.Group>
-                    </Col>
-                    <Col>
-                      <Form.Group className="mb-3" controlId="formBasicfName">
-                        <Form.Label>Surname</Form.Label>
-                        <Form.Control
-                          name="sname"
-                          type="name"
-                          placeholder="Your surname"
-                          defaultValue={props.profile?.sname}
-                        />
-                      </Form.Group>
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Col xs={3}></Col>
-                    <Col>
-                      <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Label>Email address</Form.Label>
-                        <Form.Control
-                          name="email"
-                          type="email"
-                          placeholder="Enter email"
-                          defaultValue={props.profile?.email}
-                        />
-                        <Form.Text className="text-muted">
-                          We'll never share your email.
-                        </Form.Text>
-                      </Form.Group>
-                    </Col>
-                    <Col>
-                      <Form.Group
-                        className="mb-3"
-                        controlId="formBasicLocation"
-                      >
-                        <Form.Label>Location</Form.Label>
-                        <Form.Control
-                          name="location"
-                          type="name"
-                          placeholder="Enter Location"
-                          defaultValue={props.profile?.location}
-                        />
-                      </Form.Group>
-                    </Col>
-                  </Row>
-                </div>
-              </div>
-            </div>
+                </figure>
+              </Card.Header>
+              <Row className="mt-3">
+                <Col>
+                  <Form.Group className="mb-3" controlId="formBasicfName">
+                    <Form.Label>First Name</Form.Label>
+                    <Form.Control
+                      name="fname"
+                      type="name"
+                      placeholder="Your first name"
+                      defaultValue={props.profile?.fname}
+                    />
+                  </Form.Group>
+                </Col>
+                <Col>
+                  <Form.Group className="mb-3" controlId="formBasicfName">
+                    <Form.Label>Last Name</Form.Label>
+                    <Form.Control
+                      name="sname"
+                      type="name"
+                      placeholder="Your surname"
+                      defaultValue={props.profile?.sname}
+                    />
+                  </Form.Group>
+                </Col>
+              </Row>
+              <Row>
+                <Col>
+                  <Form.Group className="mb-3" controlId="formBasicEmail">
+                    <Form.Label>Email address</Form.Label>
+                    <Form.Control
+                      name="email"
+                      type="email"
+                      placeholder="Enter email"
+                      defaultValue={props.profile?.email}
+                    />
+                    <Form.Text className="text-muted">
+                      We'll never share your email.
+                    </Form.Text>
+                  </Form.Group>
+                </Col>
+                <Col>
+                  <Form.Group className="mb-3" controlId="formBasicLocation">
+                    <Form.Label>Location</Form.Label>
+                    <Form.Control
+                      name="location"
+                      type="name"
+                      placeholder="Enter Location"
+                      defaultValue={props.profile?.location}
+                    />
+                  </Form.Group>
+                </Col>
+              </Row>
+            </section>
 
             <Form.Group className="mb-3" controlId="formBasicBio">
               <Form.Label>Bio</Form.Label>
@@ -348,31 +331,28 @@ function Profile(props) {
                   </Form.Group>
                 </Col>
               </Row>
-              <Row>
-                <Col>
-                  <Form.Group className="mb-3" controlId="formBasicCourse">
+              <Form.Group className="mb-3" controlId="formBasicCourse">
+                <Row>
+                  <Col>
                     <Form.Label>Bootcamp Start Date</Form.Label>
-                    <span style={{ display: "flex" }}>
-                      <DatePicker
-                        className="datepicker-select"
-                        selected={courseDate}
-                        defaultValue={"Choose date"}
-                        placeholderText={"Choose date"}
-                        // onSelect={handleCourseSelect}
-                        dateFormat="MMMM yyyy"
-                        onChange={(date) => setCourseDate(date)}
-                      />
-                      <Button
-                        className="button-orange"
-                        variant="primary"
-                        onClick={handleCourseCreate}
-                      >
-                        <MdCheckCircle /> Add
-                      </Button>
-                    </span>
-                  </Form.Group>
-                </Col>
-              </Row>
+                    <DatePicker
+                      className="datepicker-select"
+                      selected={courseDate}
+                      defaultValue={"Choose date"}
+                      placeholderText={"Choose date"}
+                      dateFormat="MMMM yyyy"
+                      onChange={(date) => setCourseDate(date)}
+                    />
+                    <Button
+                      className="active-button mt-2"
+                      variant="primary"
+                      onClick={handleCourseCreate}
+                    >
+                      Add Course
+                    </Button>
+                  </Col>
+                </Row>
+              </Form.Group>
               <Row>
                 <Form.Group className="mb-3" controlId="formCourses">
                   <Form.Label>Attended Courses</Form.Label>
@@ -456,7 +436,7 @@ function Profile(props) {
                   <br />
                   <Button
                     variant="default"
-                    className="button-orange-outline"
+                    className="active-button"
                     onClick={submitPhoto}
                   >
                     Submit
@@ -468,41 +448,26 @@ function Profile(props) {
               <Row>
                 <Col>
                   <Form.Label>Upload Your CV</Form.Label>
-                  <br />
                   <Form.Control
                     type="file"
                     accept=".doc, .docx, .pdf"
                     onChange={changeCvHandler}
                   />
-                </Col>
-                <Col>
-                  <Form.Label>
-                    You must submit changes before you update.
-                  </Form.Label>
-                  <br />
                   <Button
                     variant="default"
-                    className="button-orange-outline"
+                    className="active-button mt-2"
                     onClick={submitCv}
                   >
                     Submit
-                  </Button>{" "}
+                  </Button>
                 </Col>
               </Row>
             </Form.Group>
             <hr />
             <Form.Group className="mb-3" controlId="formBasicCheckbox">
-              <Form.Label>Are you available for hire?</Form.Label>
-              <Row
-                className="skill-badges card-text"
-                style={{ paddingTop: "1rem" }}
-              >
-                <Col xs={9}>
-                  <strong>Warning</strong>
-                  <p>
-                    Changing this setting will re-order your position in the
-                    dashboard.
-                  </p>
+              <Row>
+                <Col xs={10}>
+                  <Form.Label>Are you available for hire?</Form.Label>
                 </Col>
                 <Col>
                   <Form.Check
@@ -513,11 +478,15 @@ function Profile(props) {
                     onClick={() => cAvailableDate(Date.now())}
                   />
                 </Col>
+                <small style={{ color: "var(--titles-color)" }}>
+                  <strong>Warning:</strong> Changing this setting will re-order
+                  your position in the dashboard.
+                </small>
               </Row>
             </Form.Group>
             <hr />
             <center>
-              <Button className="button-orange" variant="primary" type="submit">
+              <Button className="active-button" type="submit">
                 {" "}
                 Update Profile{" "}
               </Button>

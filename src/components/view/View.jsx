@@ -41,7 +41,7 @@ function View(props) {
             size="sm"
             title={file}
             variant="default"
-            className="button-orange-outline w-100"
+            className="active-button w-100"
             onClick={() => window.open(fullurl, "_blank").focus()}
           >
             {label}

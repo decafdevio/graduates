@@ -23,7 +23,7 @@ function Login(props) {
       })
       .catch((err) => {
         const toastId = toast(
-          "Sorry, the username does not exist or password is not right :(",
+          "Sorry, the username does not exist or password is incorrect :(",
           {
             autoClose: 2000,
             hideProgressBar: true,
@@ -39,48 +39,49 @@ function Login(props) {
       });
   };
 
-  const loginParticipant = () => {
-    setEmail(process.env.REACT_APP_LOGIN_1);
-    setPassword(process.env.REACT_APP_PASSWORD);
-    document.getElementById("login").classList.remove("button-orange");
-    document.getElementById("login").classList.add("glow-animation");
-    document.getElementById("login").classList.add("glow-animation");
-  };
-
-  const loginEmployer = () => {
-    setEmail(process.env.REACT_APP_LOGIN_2);
-    setPassword(process.env.REACT_APP_PASSWORD);
-    document.getElementById("login").classList.remove("button-orange");
-    document.getElementById("login").classList.add("glow-animation");
-    document.getElementById("login").classList.add("glow-animation");
-  };
-
-  const loginAdmin = () => {
-    setEmail(process.env.REACT_APP_LOGIN_3);
-    setPassword(process.env.REACT_APP_PASSWORD);
-    document.getElementById("login").classList.remove("button-orange");
-    document.getElementById("login").classList.add("glow-animation");
-    document.getElementById("login").classList.add("glow-animation");
+  const demoLogin = () => {
+    let user = process.env.REACT_APP_USER1_LOGIN.split(":");
+    document.getElementById("loginput").value = user[0];
+    document.getElementById("logpassword").value = user[1];
+    document.getElementById("login").style.display = "none";
+    document.getElementById("login").click();
   };
 
   return (
     <>
       {props.handleClose()}
-      <div className="login-container">
-        <Form className="login-frame" onSubmit={(e) => submitHandler(e)}>
+      <main>
+        <Form
+          className="login-frame"
+          onSubmit={(e) => submitHandler(e)}
+          onMouseOver={() =>
+            (document.getElementById("demoframe").style.display = "flex")
+          }
+          onMouseOut={() =>
+            (document.getElementById("demoframe").style.display = "none")
+          }
+        >
+          <div id="demoframe">
+            <div id="demo-inner">
+              <Button className="active-button" onClick={() => demoLogin()}>
+                Demo User Login
+              </Button>
+            </div>
+          </div>
+
           <Form.Group className="mb-3">
             <header id="title-login">
-              Graduat<span style={{ color: "chocolate" }}>ê</span>s
+              Graduat<span style={{ color: "var(--accent-color)" }}>ê</span>s
             </header>
           </Form.Group>
           <center>
-            <Form.Group className="mb-3">
+            <Form.Group className="mb-4">
               <Form.Control
                 style={{ width: "70%" }}
+                width="70%"
                 type="email"
                 name="email"
-                // placeholder="Email"
-                placeholder="demo@decafdev.io"
+                placeholder="email"
                 id="loginput"
                 disabled={disabled}
                 value={email}
@@ -97,13 +98,12 @@ function Login(props) {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
-              <br />
             </Form.Group>
             <Form.Group className="mb-3">
               <Button
                 type="submit"
                 id="login"
-                className="button-orange"
+                className="active-button"
                 disabled={disabled}
               >
                 Login
@@ -113,34 +113,9 @@ function Login(props) {
                 Register
               </Button>
             </Form.Group>
-            {/* <Form.Group className="mb-3">
-              <Button
-                className="button-orange"
-                disabled={disabled}
-                onClick={() => loginParticipant()}
-              >
-                Login as Jobseeker
-              </Button>
-              &nbsp;&nbsp;
-              <Button
-                className="button-orange"
-                disabled={disabled}
-                onClick={() => loginEmployer()}
-              >
-                Login as Employer
-              </Button>
-              &nbsp;&nbsp;
-              <Button
-                className="button-orange"
-                disabled={disabled}
-                onClick={() => loginAdmin()}
-              >
-                Login as Admin
-              </Button>
-            </Form.Group> */}
           </center>
         </Form>
-      </div>
+      </main>
       <ToastContainer theme="dark" position="top-center" transition={Zoom} />
     </>
   );

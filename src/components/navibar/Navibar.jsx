@@ -75,15 +75,15 @@ export default function Navibar(props) {
       <Navbar bg="light" expand="lg" fixed="top">
         <Container fluid>
           <Navbar.Brand as={Link} to="/">
-            Graduat<span style={{ color: "chocolate" }}>ê</span>s
+            Graduat<span style={{ color: "var(--accent-color)" }}>ê</span>s
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="navbarScroll" />
+          {/* <Navbar.Toggle aria-controls="navbarScroll" /> */}
           <Navbar.Collapse id="navbarScroll">
             <Nav className="me-auto my-2 my-lg-0 mh-100" navbarScroll>
               {/* <Nav.Link as={Link} to="/" style={{ marginTop: "4px" }}>
                 Dashboard
               </Nav.Link> */}
-              <Nav.Link as={Link} to={theprofile}>
+              <Nav.Link as={Link} to={theprofile} className="pl-2">
                 {" "}
                 <img
                   src={url + `user/pic/` + props.user.picture}
@@ -121,6 +121,7 @@ export default function Navibar(props) {
                 <MdAdminPanelSettings /> Statistics
               </Nav.Link>
             </Nav>
+
             {/* <div style={{ visibility: props.naviShow }}>
               <Select
                 style={{ visibility: props.naviShow }}
@@ -172,6 +173,7 @@ export default function Navibar(props) {
               </Button>
             </Form>
           </Navbar.Collapse>
+          <Navbar.Toggle aria-controls="navbarScroll" />
         </Container>
       </Navbar>
     ) : null;

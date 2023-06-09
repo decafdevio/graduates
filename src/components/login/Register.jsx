@@ -76,7 +76,7 @@ function Register(props) {
         <center>
           <Form.Group className="mb-3">
             <div id="title-login">
-              Graduat<span style={{ color: "chocolate" }}>ê</span>s
+              Graduat<span style={{ color: "var(--primary-color)" }}>ê</span>s
             </div>
           </Form.Group>
           <Form.Group className="mb-3" name="radio">

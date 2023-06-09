@@ -8,8 +8,6 @@
 /** internal stylesheets */
 @import "./queries.css";
 
-  /** pages */
-
   /** components */
 @import "../components/login/login.css";
 @import "../components/view/view.css";
@@ -17,7 +15,10 @@
 @import "../components/navibar/navibar.css";
 
 :root {
-  --primary-color: blue;
+  --primary-color: #9CA777;
+  --titles-color: #7C9070;
+  --accent-color: #d2691e;
+  --bck-color: #FEE8B0;
 }
 
 html {
@@ -41,6 +42,18 @@ body a:hover {
   margin-top: 3.5em;
   width: 150%;
 }
+
+.active-button {
+  background-color: white;
+  border: 1px solid var(--titles-color);
+  color: var(--accent-color);
+}
+.active-button:hover {
+  background-color: var(--primary-color);
+  border: 1px solid var(--titles-color);
+  color: white;
+}
+
 Button a {
   text-decoration: none;
   color: whitesmoke;
@@ -111,11 +124,11 @@ Button a:hover {
 .card-title {
   font-size: 2.1rem;
   font-weight: 500;
-  color: chocolate;
+  color: var(--accent-color);
 }
 .card-title:hover {
   cursor: pointer;
-  color: rgb(135, 67, 19);
+  opacity: .7;
 }
 .card-inner {
   padding: 1rem;
@@ -364,7 +377,7 @@ Button a:hover {
   font-weight: bold;
   color: white;
   font-size: 1.3em;
-  border-bottom: 30px solid chocolate;
+  border-bottom: 30px solid var(--primary-color);
   border-left: 30px solid transparent;
   border-right: 30px solid transparent;
   width: 150px;

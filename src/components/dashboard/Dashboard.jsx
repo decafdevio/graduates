@@ -28,8 +28,8 @@ function Dashboard(props) {
     multiValueLabel: (base) => ({
       ...base,
       backgroundColor: "white",
-      color: "chocolate",
-      border: "1px solid chocolate",
+      color: "var(--accent-color)",
+      border: "1px solid var(--titles-color)",
       padding: ".2em .5em",
     }),
   };
