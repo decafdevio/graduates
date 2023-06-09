@@ -40,7 +40,7 @@ Graduates recruitment app was created as part of a pair-programming exercise fol
   - [ ] `./profile` populates from previous user.
 
 ## Hosting
-__Frontend [deployed]__ - React `graduates.literecords.com:3000`   
+__Frontend [Running on Node]__ - React `graduates.literecords.com:3000`   
 __Backend__ - Node, Express `graduates.literecords.com:3001`
 
 ### Later
