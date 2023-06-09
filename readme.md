@@ -5,7 +5,7 @@ Graduates is a portal for graduates and employers to connect. Each role can defi
 <img width="1039" alt="Graduates Dashboard" src="https://github.com/decafdevio/graduates/assets/96788931/7f0323e1-c63d-4feb-80c8-d4ecb5772e8c">
 
 
-![react](https://img.shields.io/badge/React-17.0.1-orange)
+![react](https://img.shields.io/badge/React-17.0.1-orange?style=for-the-badge&logo=appveyor)
 ![express](https://badgen.net/badge/Express/4.17.3/blue?icon=git)
 ![mongoose](https://badgen.net/badge/Mongoose/5.9.27/green?icon=git)
 ![multer](https://badgen.net/badge/Multer/1.4.4/orange?icon=git)
