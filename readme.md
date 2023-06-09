@@ -14,7 +14,7 @@ Graduates is a portal for graduates and employers to connect. Each role can defi
 ## Version History
 
 ### v1.1.0 [May 2023]
-Refactored file architecture and movile-view responsiveness with Bootstrap CSS library. Hosted front/back end with literecords.com VPS.
+Refactored file architecture and mobile-view responsiveness with Bootstrap CSS library. Hosted front/back end with literecords.com VPS.
 
 <details><summary>Previous Versions</summary>
 
@@ -44,7 +44,7 @@ __Frontend [Running on Node]__ - React `graduates.literecords.com:3000`
 __Backend__ - Node, Express `graduates.literecords.com:3001`
 
 ### Later
-Installation of NGinx configured to `https://litere.co.uk`
+  - Installation of NGinx configured to `https://litere.co.uk`
 
 ## Authors
 Bradley Ashton [@DecafDevIO](https://this.com)   
