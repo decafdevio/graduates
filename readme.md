@@ -40,8 +40,11 @@ Graduates recruitment app was created as part of a pair-programming exercise fol
   - [ ] `./profile` populates from previous user.
 
 ## Hosting
-__Frontend__ - React `graduates.literecords.com:3000`   
+__Frontend [deployed]__ - React `graduates.literecords.com:3000`   
 __Backend__ - Node, Express `graduates.literecords.com:3001`
+
+### Later
+Installation of NGinx configured to `https://litere.co.uk`
 
 ## Authors
 Bradley Ashton [@DecafDevIO](https://this.com)   
