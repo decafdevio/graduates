@@ -6,10 +6,9 @@ Graduates is a portal for graduates and employers to connect. Each role can defi
 
 
 ![react](https://img.shields.io/badge/React-17.0.1-orange?style=flat-square&logo=react)
-![express](https://badgen.net/badge/Express/4.17.3/blue?icon=git)
-![mongoose](https://badgen.net/badge/Mongoose/5.9.27/green?icon=git)
-![multer](https://badgen.net/badge/Multer/1.4.4/orange?icon=git)
-![axios](https://badgen.net/badge/Axios/0.19.2/yellow?icon=git)
+![express](hhttps://img.shields.io/badge/React-17.0.1-orange?style=flat-square&logo=express)
+![mongoose](https://img.shields.io/badge/React-17.0.1-orange?style=flat-square&logo=mongodb)
+![axios](https://img.shields.io/badge/React-17.0.1-orange?style=flat-square&logo=axios)
 
 ## Version History
 
