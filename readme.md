@@ -13,8 +13,11 @@ Graduates is a portal for graduates and employers to connect. Each role can defi
 
 ## Version History
 
-### v1.1.0 [May 2023]
-Refactored file architecture and mobile-view responsiveness with Bootstrap CSS library. Hosted front/back end with literecords.com VPS.
+### v1.1.0 [June 2023]
+Rebuilt file architecture, refactored code and mobile-view responsiveness with Bootstrap CSS library. Hosted front/back end with literecords.com VPS.   
+
+Colour palette from https://colorhunt.co/palette/f97b22fee8b09ca7777c9070   
+![](src/img/Color%20Hunt%20Palette%20f97b22fee8b09ca7777c9070.png)
 
 <details><summary>Previous Versions</summary>
 
