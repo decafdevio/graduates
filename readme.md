@@ -2,7 +2,7 @@
 
 Graduates is a portal for graduates and employers to connect. Each role can define obtained or required skills which filter through search or are displayed in a brief card window on the dashboard. All users have designated CRUD permissions for editing profile content including display images and documents.   
 
-<img width="1039" alt="Graduates Dashboard" src="https://github.com/decafdevio/graduates/assets/96788931/7f0323e1-c63d-4feb-80c8-d4ecb5772e8c">
+![Graduates Dashboard](https://github.com/decafdevio/graduates/assets/96788931/7f0323e1-c63d-4feb-80c8-d4ecb5772e8c)
 
 
 ![react](https://img.shields.io/badge/React-17.0.1-orange?style=flat-square&logo=react)
@@ -17,8 +17,7 @@ Graduates is a portal for graduates and employers to connect. Each role can defi
 Rebuilt file architecture, refactored code and mobile-view responsiveness with Bootstrap CSS library. Hosted front/back end with literecords.com VPS.   
 
 Colour palette from https://colorhunt.co/palette/f97b22fee8b09ca7777c9070   
-<!-- <img alt="Colour Palette" src="./src/img/Color%20Hunt%20Palette%20f97b22fee8b09ca7777c9070.png" /> -->
-![Color Hunt Palette f97b22fee8b09ca7777c9070](https://github.com/decafdevio/graduates/assets/96788931/784aba6f-0564-46e6-a330-3e2f56de6843)
+![Color Hunt Palette](https://github.com/decafdevio/graduates/assets/96788931/784aba6f-0564-46e6-a330-3e2f56de6843)
 
 <details><summary>Previous Versions</summary>
 
