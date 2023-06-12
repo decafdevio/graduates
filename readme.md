@@ -17,7 +17,7 @@ Graduates is a portal for graduates and employers to connect. Each role can defi
 Rebuilt file architecture, refactored code and mobile-view responsiveness with Bootstrap CSS library. Hosted front/back end with literecords.com VPS.   
 
 Colour palette from https://colorhunt.co/palette/f97b22fee8b09ca7777c9070   
-![Color Hunt Palette](https://github.com/decafdevio/graduates/assets/96788931/784aba6f-0564-46e6-a330-3e2f56de6843 =200x200)
+![Color Hunt Palette](https://github.com/decafdevio/graduates/assets/96788931/784aba6f-0564-46e6-a330-3e2f56de6843)
 
 <details><summary>Previous Versions</summary>
 
