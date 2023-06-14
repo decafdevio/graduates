@@ -45,7 +45,7 @@ Graduates recruitment app was created as part of a pair-programming exercise fol
 * Functionality
   - [ ] Auto submit `input="file"` changes in `./profile`
 
-**BUGS**
+__BUGS__
   - [ ] `./profile` populates from previous user.
 
 ## Hosting
@@ -59,5 +59,4 @@ Bradley Ashton [@DecafDevIO](https://github.com/decafdevio)
 Nathan Anderson [@PhantomQuad](https://github.com/PhantomQuad)
 
 ## Support Me
-
 <a href="https://www.buymeacoffee.com/decafdevio"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" width="200" /></a>
