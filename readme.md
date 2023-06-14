@@ -18,11 +18,10 @@ Rebuilt folder architecture, refactored code and self hosted front/back end on l
 
 <details><summary>Previous Versions</summary>
 
-### v1.0.9 [April 2023]
+### ![v1.1.0](https://github.com/decafdevio/graduates/releases/tag/v1.1.0) [May 2023]
 Improved layout and fixed mobile-view responsiveness with Bootstrap CSS library. Hosted front/back end with literecords.com VPS.   
 
-Colour palette from https://colorhunt.co/palette/f97b22fee8b09ca7777c9070   
-![Color Hunt Palette](https://github.com/decafdevio/graduates/assets/96788931/784aba6f-0564-46e6-a330-3e2f56de6843)   
+Colour palette from https://colorhunt.co/palette/f97b22fee8b09ca7777c9070    
 
 ![Graduates Dashboard](https://github.com/decafdevio/graduates/assets/96788931/7f0323e1-c63d-4feb-80c8-d4ecb5772e8c)
 
