@@ -55,8 +55,8 @@ __Backend__ - Node, Express `graduates.literecords.com:3001`
   - [ ] Installation of NGinx configured to `https://litere.co.uk`
 
 ## Authors
-Bradley Ashton [@DecafDevIO](https://this.com)   
-Nathan Anderson [@PhantomQuad](https://this.com)
+Bradley Ashton [@DecafDevIO](https://github.com/decafdevio)   
+Nathan Anderson [@PhantomQuad](https://github.com/PhantomQuad)
 
 ## Support Me
 
