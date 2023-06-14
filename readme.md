@@ -18,7 +18,7 @@ Rebuilt folder architecture, refactored code and self hosted front/back end on l
 
 <details><summary>Previous Versions</summary>
 
-### ![v1.1.0](https://github.com/decafdevio/graduates/releases/tag/v1.1.0) [May 2023]
+### [v1.1.0](https://github.com/decafdevio/graduates/releases/tag/v1.1.0) [May 2023]
 Improved layout and fixed mobile-view responsiveness with Bootstrap CSS library. Hosted front/back end with literecords.com VPS.   
 
 Colour palette from https://colorhunt.co/palette/f97b22fee8b09ca7777c9070    
