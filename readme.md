@@ -16,12 +16,12 @@ Graduates is a portal for graduates and employers to connect. Each role can defi
 ### v1.1.0 [June 2023]
 Rebuilt folder architecture, refactored code and self hosted front/back end on literecords.com VPS.   
 
+Colour palette from https://colorhunt.co/palette/f97b22fee8b09ca7777c9070   
+
 <details><summary>Previous Versions</summary>
 
 ### [v1.1.0](https://github.com/decafdevio/graduates/releases/tag/v1.1.0) [May 2023]
-Improved layout and fixed mobile-view responsiveness with Bootstrap CSS library. Hosted front/back end with literecords.com VPS.   
-
-Colour palette from https://colorhunt.co/palette/f97b22fee8b09ca7777c9070    
+Improved layout and fixed mobile-view responsiveness with Bootstrap CSS library. Hosted front/back end with literecords.com VPS.    
 
 ![Graduates Dashboard](https://github.com/decafdevio/graduates/assets/96788931/7f0323e1-c63d-4feb-80c8-d4ecb5772e8c)
 
