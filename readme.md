@@ -2,7 +2,7 @@
 
 Graduates is a portal for graduates and employers to connect. Each role can define obtained or required skills which filter through search or are displayed in a brief card window on the dashboard. All users have designated CRUD permissions for editing profile content including display images and documents.   
 
-![Graduates Dashboard](https://github.com/decafdevio/graduates/assets/96788931/631717ff-bd26-46b8-9775-f29cccc53c59)
+![Graduates Dashboard](src/img/245840953-631717ff-bd26-46b8-9775-f29cccc53c59.png)
 
 
 ![react](https://img.shields.io/badge/React-17.0.1-orange?style=flat-square&logo=react)
@@ -23,13 +23,13 @@ Colour palette from https://colorhunt.co/palette/f97b22fee8b09ca7777c9070
 ### [v1.1.0](https://github.com/decafdevio/graduates/releases/tag/v1.1.0) [May 2023]
 Improved layout and fixed mobile-view responsiveness with Bootstrap CSS library. Hosted front/back end with literecords.com VPS.    
 
-![Graduates Dashboard](https://github.com/decafdevio/graduates/assets/96788931/7f0323e1-c63d-4feb-80c8-d4ecb5772e8c)
+![Graduates Dashboard](src/img/242060720-7f0323e1-c63d-4feb-80c8-d4ecb5772e8c.png)
 
 
 ### v1.0.0 [Aug 2022]
 Graduates recruitment app was created as part of a pair-programming exercise following agile project management methods with Jira and Slack for communication. It was built with React framework and a Node, Express backend with MongoDB (MERN stack). The original layout used rows of 3 column cards designed to display only the most necessary user information.   
 
-![Graduates Dashboard](https://github.com/decafdevio/graduates/assets/96788931/7e269edd-3bd7-4543-9d5f-def9c3786dff)
+![Graduates Dashboard](src/img/240598841-7e269edd-3bd7-4543-9d5f-def9c3786dff.png)
 
 </details>
 
